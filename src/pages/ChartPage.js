@@ -3,6 +3,7 @@ import Chart from "react-apexcharts";
 // import { useLocation } from 'react-router-dom';
 import { useSelector } from "react-redux";
 import moment from 'moment';
+import Naavbar from "../components/navbar/Naavbar";
 function ChartPage() {
     const count = useSelector((state) => state.expenses)
     let inAmounts = [];
@@ -43,52 +44,26 @@ function ChartPage() {
     });
 
     return (
-        <div className="App" style={{ marginTop: "100px" }}>
-            <h1>
-                Transaction Charts <i className="fas fa-user"></i>{" "}
-            </h1>
-            <div className="container">
-                <div className="w-90">
-                    <Chart
-                        options={state.options}
-                        series={state.series}
-                        type="area"
-                        width="450"
-                        height="600"
-                    />
+        <>
+            <Naavbar />
+            <div className="App" style={{ marginTop: "100px" }}>
+                <h1>
+                    Transaction Charts <i className="fas fa-user"></i>{" "}
+                </h1>
+                <div className="container">
+                    <div className="w-90%">
+                        <Chart
+                            options={state.options}
+                            series={state.series}
+                            type="area"
+                            width="95%"
+                            height="600"
+                        />
+                    </div>
                 </div>
-
-
             </div>
-        </div>
-
-
+        </>
     );
 }
 
 export default ChartPage;
-
-
-// bar
-// line
-// area
-// radar
-// histogram
-// scatter
-// heatmap
-/* <div className="col-4">
-        <Chart
-          options={state.options}
-          series={state.series}
-          type="bar"
-          width="450"
-        />
-      </div> */
-/* <div className="col-4">
-  <Chart
-    options={state.options}
-    series={state.series}
-    type="line"
-    width="450"
-  />
-</div> */

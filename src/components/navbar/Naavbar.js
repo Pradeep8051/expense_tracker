@@ -6,7 +6,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChartLine } from '@fortawesome/free-solid-svg-icons';
 import Tooltip from 'react-bootstrap/Tooltip';
 import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
-
+import Signout from '../../forms/Signout';
 
 function Naavbar() {
   const renderTooltip = (props) => (
@@ -33,16 +33,13 @@ function Naavbar() {
 
               <Nav.Link as={Link} to="/chart" className='fs-5 fw-normal ' style={{ color: "green" }}>
                 <OverlayTrigger
-
                   placement="bottom"
                   delay={{ show: 250, hide: 400 }}
-                  overlay={renderTooltip}
-                >
+                  overlay={renderTooltip}>
                   <FontAwesomeIcon icon={faChartLine} />
                 </OverlayTrigger>
-
               </Nav.Link>
-
+              <Nav.Link as={Link} to="/chart" className='fs-5 fw-normal ' style={{ color: "green" }}> <Signout /></Nav.Link>
               {/* <Nav.Link eventKey={2} href="#page">
              pages
             </Nav.Link> */}
